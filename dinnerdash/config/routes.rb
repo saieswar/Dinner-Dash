@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
    get 'admin/index'
 
-   get 'admin/add_items'
+   post 'admin/add_items' => 'admin#add_items'
 
    get 'admin/remove_items'
 

@@ -60,7 +60,9 @@
          <td> <%= link_to item.title, itemdescription_path(:item_id => item.id) %></td>
          <td> <%= item.description %> </td>
          <td> <%= item.price %> </td>
-
+         <% item.images.each do|img| %>
+         <td><img src="/images/<%= img.name %>" width="50" height="50"></td>
+         <% end %>
        </tr>
      <% end %>
   </table>
