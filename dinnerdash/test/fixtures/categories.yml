@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  small: MyString
+  big: MyString
+  familypack: MyString
+  medium: MyString
+  specialpack: MyString
+
+two:
+  small: MyString
+  big: MyString
+  familypack: MyString
+  medium: MyString
+  specialpack: MyString

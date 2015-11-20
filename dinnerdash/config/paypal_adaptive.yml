@@ -1,0 +1,16 @@
+development:
+  environment: "sandbox"
+  username: "marojusaieswar-facilitator_api1.gmail.com"
+  password: "PD3K5GJPSPMAA6GJ"
+  signature: "ABA9UDxSyFalNO.EbghLzzfw-4K3AOmyY8VK.izFs2ospDlJ2EJr-Zs."
+  #secret: "EFC7ghkhr_qNLf276FHrldEh0KmACVIXWOEaIcGF5zWJdqAzYH8eRa9DN5iS6Si9yGFTtUGBe5WJG3u0"
+  application_id: "APP-80W284485P519543T"
+
+
+test:
+  environment: "sandbox"
+  username: "marojusaieswar-facilitator_api1.gmail.com"
+  password: "PD3K5GJPSPMAA6GJ"
+  signature: "ABA9UDxSyFalNO.EbghLzzfw-4K3AOmyY8VK.izFs2ospDlJ2EJr-Zs."
+  #secret: "EFC7ghkhr_qNLf276FHrldEh0KmACVIXWOEaIcGF5zWJdqAzYH8eRa9DN5iS6Si9yGFTtUGBe5WJG3u0"
+  application_id: "APP-80W284485P519543T"

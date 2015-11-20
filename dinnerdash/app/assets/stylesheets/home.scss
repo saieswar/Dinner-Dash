@@ -1,0 +1,33 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.panel-primary > .panel-heading {
+color: #ffffff;
+background-color: #00B0FF;
+border-color: #428bca;
+}
+
+
+
+.images{
+ height :400px !important;
+ width :1150px	;
+}
+.carousel-control{
+	padding-top :150px;
+	font-size :24px;
+}
+.fa-angle-right {
+	font-size :40px !important;
+	font-weight :bolder !important;
+
+}
+
+
+.fa-angle-left {
+	font-size :40px !important;
+    font-weight :bolder !important;
+}
+#myCarousel{
+	
+}

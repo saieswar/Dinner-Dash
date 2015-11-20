@@ -1,0 +1,9 @@
+
+
+<div class="container well" style="width: 600px">
+   <div><strong><%= @item.title %> </strong></div>
+   <div> <strong>Description: </strong>  <%= @item.description %></div>
+   <div> <strong>Price: </strong> <%= @item.price %></div>
+<%= link_to "Add To Cart", cart_add_path(:id => @item.id), class: "btn btn-primary " %>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="container" style="width: 100%">
+<span id="loginerr"></span>
+<div class="row"> 
+
+    <div class="col-xs-12 col-sm-12 col-md-10 col-sm-offset-2 col-md-offset-1">
+		<%=form_tag users_login_path, remote: :true do%>
+			<fieldset>
+				<h2>Please Sign In</h2>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    <!--<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">-->
+                     <%= text_field_tag :email, '',class: "form-control input-lg", placeholder: "Email Address" %>
+				</div>
+				<div class="form-group" style="width: 100%">
+                   <!-- <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password"> -->
+                   <%= password_field_tag :password,'',class: "form-control input-lg", placeholder: "password" %>
+				</div>
+				<span class="button-checkbox">
+					<button type="button" class="btn" data-color="info">Remember Me</button>
+                    <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+					<a href="" class="btn btn-link pull-right">Forgot Password?</a>
+				</span>
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <!--<input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In"> -->
+                        <%= submit_tag :Login, class: "btn btn-lg btn-success btn-block"%>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<!--<a href="" class="btn btn-lg btn-primary btn-block">Register</a>-->
+
+                    <%= link_to "Register", users_new_path, remote: :true,"data-toggle": "modal", "data-target": "#t_and_c_m" ,class: "btn btn-lg btn-primary btn-block" %>
+
+					</div>
+				</div>
+			</fieldset>
+		<% end %>
+	</div>
+
+
+</div>

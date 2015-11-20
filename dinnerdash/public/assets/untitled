@@ -1,0 +1,53 @@
+
+1. install gem paypal-adaptive
+
+2. Create an account in paypal sandbox
+
+     https://developer.paypal.com/
+
+3. Sign in into the account and create and application
+
+  development:
+
+  environment: "sandbox"
+  username: "recruiter1.eteki.testing-facilitator_api1.gmail.com"
+  password: "1366193619"
+  signature: "An5ns1Kso7MWUdW4ErQKJJJ4qi4-AElegi7xLCFHop1PtkkbbtMn6Xy1"
+  application_id: "APP-80W284485P519543T"
+
+The application id is the default global id i.e  APP-80W284485P519543T
+
+4. data = {
+    "returnUrl" => "http://www.lesspercent.com/bids/#{@bid.id}/processing",
+    "requestEnvelope" => {"errorLanguage" => "en_US"},
+    "currencyCode"=>"USD",
+    "receiverList"=>{"receiver"=>
+         [{"email"=>"sridhar.vedula-facilitator@amzur.com", "amount"=>"#{Payment::Amount}"}]},
+    "cancelUrl"=>"http://www.lesspercent.com/bids/#{@bid.id}/confirmation_form",
+    "actionType"=>"PAY",
+    "ipnNotificationUrl"=>"http://www.lesspercent.com/payments/notification_response?bid_id=#{@bid.id}"            
+    }
+
+https://www.paypal.com/webapps/customerprofile/summary.view
+
+5. Set ipn notification url to some controller method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+environment: "sandbox"
+username: "marojusaieswar-facilitator@gmail.com"
+password: "saibaba44"
+signature: "Ae4VLSSb1eHfn-ZxBTVI0jP4XbHojXeWLCzMUmGPjaSbyLiP3F0nEkgwHn8yMJmjUv6OVre52uvFiZlx"
+secret: "EFC7ghkhr_qNLf276FHrldEh0KmACVIXWOEaIcGF5zWJdqAzYH8eRa9DN5iS6Si9yGFTtUGBe5WJG3u0"
+application_id: "APP-80W284485P519543T"

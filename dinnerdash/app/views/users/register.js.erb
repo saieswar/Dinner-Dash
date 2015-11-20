@@ -1,0 +1,15 @@
+<% if @errors.present? %>
+	
+	<% @errors.each do |error| %>
+		$("#errors").append('<%= error %>');
+	<% end %>
+
+	$("#errors").addClass("alert alert-danger");
+	//alert();
+
+<% else %>	
+
+	
+	 location.reload();
+
+<% end %>

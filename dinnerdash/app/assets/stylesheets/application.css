@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.navbar-default {
+background-color: #3B5998 !important;
+border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > li > a {
+color:  #ebeef4 !important;
+font-weight: bolder;
+
+}
+
+.navbar-default .navbar-brand {
+color: #ebeef4 !important;
+font-size: 24px;
+font-weight: bolder;
+}
+
+
+.panel-primary > .panel-heading {
+color: #ffffff;
+background-color: #3B5998 !important;
+border-color: #e7e7e7;
+}
+
+.notification{
+	background-color: red;
+	border-radius: 25px;
+	height: 20px;
+	width: 20px;!important
+	display: block;
+	padding: 4px;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+/* Above, the asterisk selects all elements in the HTML document and rests the margin and padding. This ensures that any of the annoying "default" margin and paddings a browser might have will be reset to zero. */
+
+#noti_Container {
+    position:relative;     /* This is crucial for the absolutely positioned element */
+    border:1px; /* This is just to show you where the container ends */
+    width:16px;
+    height:16px;
+    color:#E2EEF8; 
+}
+
+
+
+.noti_bubble {
+position: absolute;
+top: 5px;
+right: 9px;
+padding: 1px 2px 1px 2px;
+background-color: #F71352;
+color: rgb(245, 245, 245);
+font-weight: bold;
+font-size: 0.85em;
+border-radius: 10px !important;
+box-shadow: 1px 1px 1px rgb(3, 9, 12);
+width: 15px;
+height: 15px;
+}
+
+.container-fluid {
+margin-right: auto;
+margin-left: auto;
+padding-left: 1px;
+padding-right: 8px;
+}

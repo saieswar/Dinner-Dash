@@ -1,0 +1,48 @@
+
+<div class="container" style="width: 500px">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Cart</div>
+ 
+      <table  class="table .table-striped">
+        <tr>
+           <th>Item Title</th>
+           <th>Description</th>
+           <th>Quantity</th>
+           <th>Price</th>
+             <%= @order.id %>
+             <% if @order.status=="In-Progress"%>
+               <span id="total_amount"><%= @total_amount %></span>
+               <% @order.item_orders.each do|item_order| %>
+        <tr>
+          <div class="ir">
+            <%= hidden_field_tag(:item_order, item_order.id,class: "item_orders")%>
+          </div>
+          <td> <%=Item.find(item_order.item_id).title %> </td>
+           <td> <%=Item.find(item_order.item_id).description %> </td>
+           <td> <%= text_field_tag(:number, item_order.units,class: "units", "data-id" => item_order.id) %></td>
+           <td><%= label_tag "price", item_order.price, "class" => "price_value" + item_order.id.to_s %>  </td>
+           <td><%= link_to "", remove_cart_path(:item_order_id => item_order.id), :confirm => "Are you sure?", :method => :delete, class: "fa fa-times ", id: "del_cart_item"%></td>
+           <br>
+        </tr>
+         <% end %>
+         <% end %>
+         </tr>
+      </table>
+  
+     <%= link_to "checkout", save_cart_path(:order_id => @order.id, :total_amount => @total_amount), :method=> :post %>
+
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	 $(".units").blur(function(){
+ 		alert();
+      $.get("/cart_update.json?unit="+$(this).val()+"&item_order="+$(this).attr("data-id"), function(res){
+        $(".price_value" + res.item_id ).text(res.msg);
+        $("#total_amount").text(res.total_amount);
+        //total_amount = parseInt($("#total_amount").text())+parseInt(res.msg)/par
+      });
+	 });
+</script>
