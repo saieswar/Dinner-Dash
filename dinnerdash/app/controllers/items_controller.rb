@@ -10,7 +10,13 @@ class ItemsController < ApplicationController
   	@item = Item.find(params[:item_id])
   end
 
+  def items_category
+    @category = Category.find(params["id"].to_i)
+    @items = @category.items
+    @categories = Category.all
+    render 'home/index'
 
+  end
   def item_cart
 
   end

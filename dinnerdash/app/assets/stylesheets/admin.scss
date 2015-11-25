@@ -4,7 +4,7 @@
 
 
 .navbar-default {
-background-color: #130B74 !important;
+background-color: #000000 !important;
 border-color: #e7e7e7;
 }
 .navbar-default .navbar-nav > li > a {
@@ -14,4 +14,14 @@ color: #EFF7F8 !important;
 
 .navbar-default .navbar-brand {
 color: #FAFAFA !important;
+}
+
+
+.panel-primary > .panel-heading {
+color: #ffffff;
+background-color: #0E1113;
+border-color: #171819;
+}
+.panel-primary {
+border-color: #1B1D1F;
 }

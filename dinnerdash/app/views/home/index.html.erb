@@ -1,77 +1,132 @@
-
-<div class= "container well">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="img1.jpg" alt="Chania"  class="images">
-    </div>
-
-    <div class="item">
-      <img src="img2.jpg" alt="Chania" class="images">
-    </div>
-
-    <div class="item">
-      <img src="img3.jpg" alt="Flower" class="images">
-    </div>
-
-    <div class="item">
-      <img src="img4.jpg" alt="Flower" class="images">
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="fa fa-angle-left" aria-hidden="true" class="slide"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="fa fa-angle-right" aria-hidden="true" class="slide"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+  <div class="row">
 
 
+            <div class="col-md-3">
+                <p class="lead">Choose Category</p>
+                <div class="list-group">
+                  <%= link_to "All", root_path, class: "list-group-item" %>               
+                  <% @categories.each do|category| %>
+                   <%=  link_to category.categorytype, item_category_path(:id => category.id), class: "list-group-item" %>
+                    
+                    <% end %>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                            <div class="item active">
+                                    <!-- <img class="slide-image" src="img1.jpg" alt="" width="800" height="300"> -->
+
+                                     <img alt="Icon" src="/img1.jpg" class="slide-image" />
+                                    
+                                </div>
+                                
+                                <div class="item">
+                                <img alt="Icon" src="/img3.jpg" class="slide-image" />
+                                                                    </div>
+                                <div class="item">
+                                <img alt="Icon" src="/img4.jpg" class="slide-image" />
+                                    
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="fa fa-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="fa fa-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
 
 
-<div class="panel panel-primary">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Default panel contents -->
-  <div class="panel-heading">Items</div>
+  <h4>Items</h4>
 
 
-  <!-- Table -->
-  <table class="table table-bordered" >
-     <tr> 
-       <th>Title</th>
-       <th>Description</th>
-       <th>Price</th>
- 
-     </tr>
      <% @items.each do|item| %>
-       <tr>
+       <!-- <tr>
          <td> <%= link_to item.title, itemdescription_path(:item_id => item.id) %></td>
          <td> <%= item.description %> </td>
-         <td> <%= item.price %> </td>
+         <td>  </td> -->
          <% item.images.each do|img| %>
-         <td><img src="/images/<%= img.name %>" width="50" height="50"></td>
+       <!--   <td><img src="/images/<%= img.name %>" width="50" height="50"></td> -->
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="/images/<%= img.name %>" id="img" width="320" height="150">
+                            <div class="caption">
+                            <%= link_to item.title, itemdescription_path(:item_id => item.id) %>
+
+                                <h4 class="pull-right">$<%= item.price %></h4>
+
+                             <p><%= item.description %></p>
+                                <h4>
+                                <%= link_to "", cart_add_path(:id => item.id), class: "fa fa-shopping-cart fa-2x pull-right  carts" %>
+                               <!--  <a href="#" class="fa fa-shopping-cart fa-lg"></a> -->
+                                
+                                </h4>   
+                                                           
+                             </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </p>
+                            </div>
+                       
+                    </div>
+</div>
          <% end %>
-       </tr>
+       
      <% end %>
-  </table>
-</div>
-</div>
 
 
 
-</div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="logreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
   <div class="modal-dialog modal-md">

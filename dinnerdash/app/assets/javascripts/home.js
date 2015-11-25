@@ -1,7 +1,11 @@
 
 $(document).ready( function() {
+
+    
+
+
     $('#myCarousel').carousel({
-		interval:   2000
+		interval:   2000;
 	});
 	
 	var clickEvent = false;

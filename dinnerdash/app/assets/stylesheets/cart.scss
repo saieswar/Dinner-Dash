@@ -4,3 +4,31 @@
 #del_cart_item{
 	color: red;
 }
+
+.panel-primary > .panel-heading {
+color: #ffffff;
+background-color: #000000 !important;
+border-color: #060A0E;
+
+}
+.panel-primary {
+border-color: #5B6064;
+}
+.cartitems{
+  
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #FFF2F2;
+  background-color: #F8D6E1;
+}
+#table-head{
+background-color: #AFACF3;
+}
+
+.panel-footer {
+padding: 16px 15px;
+background-color: #f5f5f5;
+border-top: 1px solid #dddddd;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 3px;
+}

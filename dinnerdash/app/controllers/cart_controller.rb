@@ -2,14 +2,10 @@ class CartController < ApplicationController
 require 'paypal_adaptive'
 
   def display_cart
-    # raise params.inspect
-    #a=ItemOrder.where(["order_id=? and item_id=?", params["order_id"],2])
     @total_amount=0
     @order=Order.find(params[:order_id])
-    #raise @order.item_orders.inspect
     @order.item_orders.each { |item| @total_amount = @total_amount + (item.price ) }   
     @order.item_orders.where(:status => "In-Progress")
-    # raise @order.items.inspect
   end
 
 
@@ -80,7 +76,7 @@ require 'paypal_adaptive'
         redirect_to pay_response.approve_paypal_payment_url
       else
         puts pay_response.errors.first['message']
-        render :text=>"transaction failed"
+        render :text=>"transaction failed!"
       end
     else
     redirect_to users_getlogin_path

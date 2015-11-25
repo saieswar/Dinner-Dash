@@ -10,22 +10,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
        #flash[:notice] = "Sucessfully Registered!"
- 
     else
-
       @errors = @user.errors.full_messages     
-
-
     end
-
-
     respond_to do |format|
       format.js
     end
   end
 
   
-
   def validation
    # raise params.inspect
     if params[:lastname].present?
@@ -46,9 +39,6 @@ class UsersController < ApplicationController
    end 
 
   end
-
-
-
 
 
   def login
@@ -75,8 +65,6 @@ class UsersController < ApplicationController
   end
 
 
-
-
   def logout
     session[:user_id] = nil
     flash[:notice] = "signed out Sucessfully!"
@@ -90,11 +78,13 @@ class UsersController < ApplicationController
   def getlogin
   end
   
-
-
-  private
-    def user_params
+private
+  def user_params
      params.require(:user).permit(:firstname, :lastname, :email, :ph, :password, :password_confirmation)    	
-    end
+  end
 
 end
+
+
+
+#User.first.orders.all.map(&:items)

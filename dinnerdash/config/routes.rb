@@ -33,7 +33,7 @@ Rails.application.routes.draw do
    get 'users/edit_profile/:id' => 'users#edit_profile'
 
    match '/cart_items', to: 'application#cart_items', via: :get
-
+   get 'item/category' => 'home#items_category'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
